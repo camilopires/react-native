@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+@file:Suppress("DEPRECATION")
+
 package com.facebook.react.modules.accessibilityinfo
 
 import android.app.Application
@@ -274,7 +276,7 @@ class AccessibilityInfoModuleTest {
   private fun setFontWeightAdjustment(adjustment: Int): Configuration {
     val resources = RuntimeEnvironment.getApplication().resources
     val config = Configuration(resources.configuration).apply { fontWeightAdjustment = adjustment }
-    @Suppress("DEPRECATION") resources.updateConfiguration(config, resources.displayMetrics)
+    resources.updateConfiguration(config, resources.displayMetrics)
     return config
   }
 
